@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
 
 body, html {
     margin: 0;
@@ -14,31 +14,44 @@ body, html {
     position: relative;
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
 }
 
 #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure the logo is above the stars */
+    position: relative; /* Needed for z-index to take effect */
+}
+
+#logo-wrapper {
+    background-color: #000;
+    padding: 20px;
+    position: relative; /* Needed for the stamp to be positioned relative to the logo */
+}
+
+#logo {
+    width: 100%;
+    max-width: 1000px;
+    display: block;
+    margin: auto;
+}
+
+#stamp {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
-
-#logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-}
-
-#header h1 {
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    background-image: url('https://onlygfx.com/wp-content/uploads/2018/03/confidential-stamp-4.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.7;
 }
 
 #stars {
@@ -47,7 +60,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 1; /* Ensure the stars are below the logo */
 }
 
 .star {
@@ -66,128 +79,26 @@ body, html {
     }
 }
 
-#login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 400px;
-    padding: 20px;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    border: 1px solid #555;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-@keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-}
-
-#login h2 {
-    text-align: center;
-    color: #ddd;
-}
-
-#login form {
+#button-wrapper {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
-#login label {
-    margin-bottom: 5px;
-    color: #ddd;
-}
-
-#login input[type="text"], #login input[type="password"] {
+#enter-button {
     font-family: 'Orbitron', sans-serif;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #555;
+    font-size: 1.5em;
+    font-weight: 900;
     color: #fff;
-    transition: box-shadow 0.3s ease;
-}
-
-#login input[type="text"]:focus, #login input[type="password"]:focus {
-    box-shadow: 0 0 10px #4CAF50;
-}
-
-#login input[type="submit"] {
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background-color: #000;
+    border: 2px solid #fff;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-#login input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-#message {
-    color: red;
-    text-align: center;
-}
-
-#hacking-messages {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; /* Make the messages unclickable */
-    z-index: 3;
-    overflow: hidden; /* Prevent messages from going off the screen */
-}
-
-.hacking-message {
-    position: absolute;
-    animation: slideIn 2s ease-out forwards;
-    font-size: 1em;
-    color: #0f0;
-    white-space: pre; /* Preserve line breaks and spaces in the code */
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(-50%, -50%) rotate(0deg);
-        opacity: 1;
-    }
-}
-
-#command-line {
-    position: fixed;
-    top: -2px; /* Slightly offset to cover the glow */
-    left: -2px; /* Slightly offset to cover the glow */
-    width: calc(100vw + 4px); /* Slightly larger to cover the glow */
-    height: calc(100vh + 4px); /* Slightly larger to cover the glow */
-    background-color: black;
-    color: #0f0;
-    padding: 10px;
-    overflow: auto;
-    white-space: pre;
-    display: none; /* Hide the command-line initially */
-    z-index: 4; /* Make sure the command-line is on top */
+#enter-button:hover {
+    background-color: #fff;
+    color: #000;
 }

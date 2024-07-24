@@ -9,26 +9,16 @@
 <body>
     <div id="container">
         <div id="header">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Seal_of_the_Central_Intelligence_Agency.svg" alt="CIA Logo" id="logo">
-            <h1>Top Secret Access</h1>
+            <div id="logo-wrapper">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/FBI_National_Security_Branch.png" alt="CIA Logo" id="logo">
+                <div id="stamp"></div>
+            </div>
+        </div>
+        <div id="button-wrapper">
+            <button id="enter-button">ENTER</button>
         </div>
         <div id="stars"></div>
-        <div id="login">
-            <h2>Raysume Mainframe Entry</h2>
-            <form id="loginForm">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required autocomplete="off"><br>
-                <label for="reason">Reason for Access:</label><br>
-                <input type="text" id="reason" name="reason" required autocomplete="off"><br>
-                <input type="submit" value="Request Access">
-            </form>
-            <p id="message"></p>
-            <div id="command-line"></div>
-        </div>
     </div>
-    <div id="hacking-messages"></div>
-    <script src="script.js"></script>
     <script src="stars.js"></script>
-    <script src="https://unpkg.com/typewriter-effect@2.17.0/dist/core.js"></script>
 </body>
 </html>

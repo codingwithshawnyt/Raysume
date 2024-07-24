@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             // Add other elements you want to hide here
             // Start glitch effect
             let glitchInterval = setInterval(() => {
-                document.body.classList.add('glitch'); // Add the glitch class to the body
-                document.body.style.setProperty('--glitch-x', Math.floor(Math.random() * 100) + 'vw');
-                document.body.style.setProperty('--glitch-y', Math.floor(Math.random() * 100) + 'vh');
-                document.body.style.setProperty('--glitch-size', Math.floor(Math.random() * 200) + '%');
+                document.documentElement.classList.add('glitch'); // Add the glitch class to the html element
+                document.documentElement.style.setProperty('--glitch-x', Math.floor(Math.random() * 100) + 'vw');
+                document.documentElement.style.setProperty('--glitch-y', Math.floor(Math.random() * 100) + 'vh');
+                document.documentElement.style.setProperty('--glitch-size', Math.floor(Math.random() * 200) + '%');
             }, 100);
             setTimeout(() => {
                 // Stop glitch effect
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 overlay.style.opacity = '0';
                 overlay.style.left = '0px';
                 overlay.style.top = '0px';
-                document.body.classList.remove('glitch'); // Remove the glitch class from the body
+                document.documentElement.classList.remove('glitch'); // Remove the glitch class from the html element
                 const skullSpans = document.querySelectorAll('#ascii-skull span');
                 skullSpans.forEach(span => {
                     span.style.color = 'red';

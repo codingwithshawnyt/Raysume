@@ -75,10 +75,31 @@ body, html {
     left: 34%; /* decrease this to shift the skull to the left */
     transform: translate(-50%, -50%);
     white-space: pre;
-    color: transparent;
+    color: inherit;
     background: transparent; /* Initial background is transparent */
     padding: 20px;
-    font-size: 1.5em; /* increase this to enlarge the skull */
+    font-size: 1.5em; /* Adjust this to control the size of the ASCII skull */
+    animation: grow 2s ease-in-out;
+    transform-origin: center center;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(3); /* Increase this value to make the skull larger */
+    }
+}
+
+.grow {
+    animation: grow 2s ease-in-out;
+}
+
+#ascii-skull {
+    animation: grow 2s ease-in-out;
+    transform-origin: center center;
+    overflow: auto;
 }
 
 #stars {

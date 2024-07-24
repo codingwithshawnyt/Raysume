@@ -49,11 +49,11 @@ body, html {
     height: 100%;
     background-image: url('https://onlygfx.com/wp-content/uploads/2018/03/confidential-stamp-4.png');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.7;
+    background-position: 50% 50%; /* Center the stamp */
+    background-size: contain; /* Ensure the entire image is visible */
+    opacity: 1; /* Increase opacity to make the stamp fully visible */
+    filter: contrast(300%) brightness(200%); /* Increase contrast and brightness */
 }
-
 #stars {
     position: absolute;
     top: 0;

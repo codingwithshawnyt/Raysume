@@ -72,7 +72,7 @@ body, html {
 #ascii-skull {
     position: absolute;
     top: 40%;
-    left: 34%; /* decrease this to shift the skull to the left */
+    left: 20%; /* Adjust this to move the ASCII art left or right */
     transform: translate(-50%, -50%);
     white-space: pre;
     color: inherit;
@@ -81,6 +81,7 @@ body, html {
     font-size: 1.5em; /* Adjust this to control the size of the ASCII skull */
     animation: grow 2s ease-in-out;
     transform-origin: center center;
+    overflow: hidden; /* Hide any content that is larger than its container */
 }
 
 @keyframes grow {

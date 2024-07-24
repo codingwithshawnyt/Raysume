@@ -47,7 +47,7 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://onlygfx.com/wp-content/uploads/2018/03/confidential-stamp-4.png');
+    background-image: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Pictures/confidential-stamp-4.png');
     background-repeat: no-repeat;
     background-position: 50% 50%; /* Center the stamp */
     background-size: contain; /* Ensure the entire image is visible */

@@ -69,11 +69,15 @@ body, html {
     transform: scale(1.5); /* Increase the size of the stamp */
 }
 
+#ascii-skull-wrapper {
+    display: flex;
+    justify-content: flex-start; /* Align the ASCII art to the left */
+    align-items: center; /* Vertically center the ASCII art */
+    width: 100%; /* Take the full width of the container */
+}
+
 #ascii-skull {
-    position: absolute;
-    top: 40%;
-    left: 34%; /* decrease this to shift the skull to the left */
-    transform: translate(-50%, -50%);
+    /* Removed position: relative; */
     white-space: pre;
     color: inherit;
     background: transparent; /* Initial background is transparent */
@@ -81,6 +85,8 @@ body, html {
     font-size: 1.5em; /* Adjust this to control the size of the ASCII skull */
     animation: grow 2s ease-in-out;
     transform-origin: center center;
+    overflow: hidden;
+    margin-right: 10%; /* Add left margin to move the ASCII art to the right */
 }
 
 @keyframes grow {
@@ -94,12 +100,6 @@ body, html {
 
 .grow {
     animation: grow 2s ease-in-out;
-}
-
-#ascii-skull {
-    animation: grow 2s ease-in-out;
-    transform-origin: center center;
-    overflow: auto;
 }
 
 #stars {

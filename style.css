@@ -20,6 +20,18 @@ body, html {
     align-items: center;
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 2; /* Ensure the overlay is below the enter button */
+    transition: opacity 1s ease-in-out, left 0.1s, top 0.1s; /* Add transitions for left and top */
+    opacity: 0;
+}
+
 #header {
     display: flex;
     justify-content: center;
@@ -39,6 +51,7 @@ body, html {
     max-width: 1000px;
     display: block;
     margin: auto;
+    opacity: 0.8; /* Decrease the opacity to dim the logo */
 }
 
 #stamp {
@@ -47,12 +60,13 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Pictures/confidential-stamp-4.png');
+    background-image: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Pictures/confidential%20stamp.png');
     background-repeat: no-repeat;
     background-position: 50% 50%; /* Center the stamp */
     background-size: contain; /* Ensure the entire image is visible */
     opacity: 1; /* Increase opacity to make the stamp fully visible */
     filter: contrast(300%) brightness(200%); /* Increase contrast and brightness */
+    transform: scale(1.5); /* Increase the size of the stamp */
 }
 
 #ascii-skull {
@@ -100,6 +114,7 @@ body, html {
 }
 
 #enter-button {
+    position: relative;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
     font-weight: 900;
@@ -116,6 +131,40 @@ body, html {
 #enter-button:hover {
     background-color: #fff;
     color: #000;
+}
+
+.glitch {
+    background-color: #fff;
+    box-shadow: 0 0 1px #fff;
+}
+
+.glitch::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 1px,
+        #000 1px,
+        #000 2px
+    );
+    opacity: 0.1;
+    animation: noise 0.2s infinite linear;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+@keyframes noise {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 10000px 10000px;
+    }
 }
 
 #enter-button:active {

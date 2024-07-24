@@ -54,6 +54,18 @@ body, html {
     opacity: 1; /* Increase opacity to make the stamp fully visible */
     filter: contrast(300%) brightness(200%); /* Increase contrast and brightness */
 }
+
+#ascii-skull {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: pre;
+    color: transparent;
+    background: transparent; /* Initial background is transparent */
+    padding: 20px;
+}
+
 #stars {
     position: absolute;
     top: 0;
@@ -95,10 +107,17 @@ body, html {
     border: 2px solid #fff;
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3; /* Add this line */
+    box-shadow: 0 0 10px #fff; /* Add a white glow around the button */
 }
 
 #enter-button:hover {
     background-color: #fff;
     color: #000;
+}
+
+#enter-button:active {
+    transform: scale(0.95); /* Make the button slightly smaller when pressed */
+    box-shadow: 0 0 20px #fff; /* Increase the glow when pressed */
 }

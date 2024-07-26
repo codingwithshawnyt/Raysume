@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-
 body, html {
     margin: 0;
     padding: 0;
@@ -9,7 +8,6 @@ body, html {
     color: #fff;
     font-family: Arial, sans-serif;
 }
-
 #container {
     position: relative;
     height: 100%;
@@ -19,7 +17,6 @@ body, html {
     justify-content: center;
     align-items: center;
 }
-
 #overlay {
     position: fixed;
     top: 0;
@@ -31,7 +28,6 @@ body, html {
     transition: opacity 1s ease-in-out, left 0.1s, top 0.1s;
     opacity: 0;
 }
-
 #header {
     display: flex;
     justify-content: center;
@@ -39,13 +35,11 @@ body, html {
     z-index: 2;
     position: relative;
 }
-
 #logo-wrapper {
     background-color: #000;
     padding: 20px;
     position: relative;
 }
-
 #logo {
     width: 100%;
     max-width: 1000px;
@@ -53,7 +47,6 @@ body, html {
     margin: auto;
     opacity: 0.8;
 }
-
 #stamp {
     position: absolute;
     top: 0;
@@ -68,12 +61,11 @@ body, html {
     filter: contrast(300%) brightness(200%);
     transform: scale(1.5);
 }
-
 #ascii-skull {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1);
+    top: 40%;
+    left: 10%; /* Move it to the far left */
+    transform: translate(-60%, -50%); /* Adjust vertical centering */
     white-space: pre;
     color: inherit;
     background: transparent;
@@ -81,13 +73,7 @@ body, html {
     font-size: 1.5em;
     transform-origin: center center;
     overflow: hidden;
-    transition: transform 0.5s ease-in-out;
 }
-
-#ascii-skull.grow {
-    transform: translate(-50%, -50%) scale(2); /* Adjust the scale as needed */
-}
-
 #stars {
     position: absolute;
     top: 0;
@@ -96,14 +82,12 @@ body, html {
     height: 100%;
     z-index: 1;
 }
-
 .star {
     position: absolute;
     background-color: #fff;
     border-radius: 50%;
     animation: twinkle 1s infinite alternate;
 }
-
 @keyframes twinkle {
     from {
         opacity: 0;
@@ -112,14 +96,12 @@ body, html {
         opacity: 1;
     }
 }
-
 #button-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
-
 #enter-button {
     position: relative;
     font-family: 'Orbitron', sans-serif;
@@ -134,17 +116,14 @@ body, html {
     z-index: 3;
     box-shadow: 0 0 10px #fff;
 }
-
 #enter-button:hover {
     background-color: #fff;
     color: #000;
 }
-
 .glitch {
     background-color: #fff;
     box-shadow: 0 0 1px #fff;
 }
-
 .glitch::before {
     content: "";
     position: absolute;
@@ -174,7 +153,6 @@ body, html {
     pointer-events: none;
     z-index: 9999;
 }
-
 @keyframes noise {
     0% {
         background-position: 0 0;
@@ -183,7 +161,6 @@ body, html {
         background-position: 10000px 10000px;
     }
 }
-
 @keyframes scale {
     0% {
         transform: scale(1);
@@ -195,7 +172,6 @@ body, html {
         transform: scale(1);
     }
 }
-
 @keyframes rotation {
     0% {
         transform: rotate(0deg);
@@ -204,12 +180,10 @@ body, html {
         transform: rotate(360deg);
     }
 }
-
 #enter-button:active {
     transform: scale(0.95);
     box-shadow: 0 0 20px #fff;
 }
-
 #access-granted {
     position: absolute;
     top: 50%;
@@ -225,7 +199,6 @@ body, html {
     box-shadow: 0 0 10px #0f0;
     animation: fadeIn 1s ease-in-out;
 }
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -233,17 +206,4 @@ body, html {
     to {
         opacity: 1;
     }
-}
-
-@keyframes grow {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-.grow {
-    animation: grow 1s ease-in-out forwards;
 }

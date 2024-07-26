@@ -1,36 +1,12 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const button = document.getElementById('enter-button');
-
-    if (button) {
-        button.onclick = function() {
-            const overlay = document.getElementById('overlay');
-            overlay.style.display = 'block';
-            overlay.style.opacity = '1';
-            document.getElementById('stars').style.display = 'none';
-            document.getElementById('logo-wrapper').style.display = 'none';
-            button.style.display = 'none';
-            let glitchInterval = setInterval(() => {
-                document.documentElement.classList.add('glitch');
-                document.documentElement.style.setProperty('--glitch-x', Math.floor(Math.random() * 100) + 'vw');
-                document.documentElement.style.setProperty('--glitch-y', Math.floor(Math.random() * 100) + 'vh');
-                document.documentElement.style.setProperty('--glitch-size', Math.floor(Math.random() * 200) + '%');
-            }, 100);
-            setTimeout(() => {
-                clearInterval(glitchInterval);
-                overlay.style.display = 'none';
-                overlay.style.opacity = '0';
-                overlay.style.left = '0px';
-                overlay.style.top = '0px';
-                document.documentElement.classList.remove('glitch');
-
-                createAsciiSkull();
-
-                setTimeout(() => {
-                    startCharacterCycle(document.getElementById('ascii-skull'), ['S', 'H', 'A', 'W', 'N', 'R', 'A', 'Y']);
-                }, 5000);
-            }, 1500);
-        };
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('enter-button').addEventListener('click', () => {
+        hideElements();
+        addGlitchEffect();
+        document.getElementById('enter-button').style.display = 'none'; // Hide the enter button
+        setTimeout(() => {
+            createAsciiSkull();
+        }, 3000); // Delay the creation of the ASCII skull by 3 seconds
+    });
 });
 
 function createAsciiSkull() {
@@ -55,7 +31,6 @@ function createAsciiSkull() {
                     "$$$$$$$$$$$$$"
                           """""
     `;
-
     const lines = asciiSkull.split('\n');
     const minSpaces = Math.min(...lines.map(line => line.search(/\S/)));
     const shiftedLines = lines.map(line => line.substring(minSpaces));
@@ -69,7 +44,7 @@ function createAsciiSkull() {
     asciiSkullElement.innerHTML = centeredAsciiSkull;
     asciiSkullElement.style.color = 'red';
     asciiSkullElement.style.userSelect = 'none';
-    asciiSkullElement.classList.add('grow');
+    console.log('ASCII Skull created');
     startCharacterCycle(asciiSkullElement, ['$', '@', '#', '%', '&', '*', '+', '=', '?', '!']);
 }
 
@@ -86,8 +61,36 @@ function startCharacterCycle(element, characters) {
                     clearInterval(interval);
                     span.textContent = 'SHAWNRAY'[index % 8];
                     element.style.color = 'green';
+                    if (index === spans.length - 1) {
+                        console.log('Character cycle complete');
+                        showAccessGrantedMessage();
+                    }
                 }, 3000);
             }, randomDelay);
         }
     });
+}
+
+function showAccessGrantedMessage() {
+    const message = document.createElement('div');
+    message.id = 'access-granted';
+    message.textContent = 'ACCESS GRANTED';
+    document.body.appendChild(message);
+    console.log('Access granted message shown');
+}
+
+function hideElements() {
+    document.getElementById('stars').style.display = 'none';
+    document.getElementById('logo-wrapper').style.display = 'none';
+    document.getElementById('stamp').style.display = 'none';
+}
+
+function addGlitchEffect() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.opacity = 1;
+    overlay.classList.add('glitch');
+    setTimeout(() => {
+        overlay.style.opacity = 0;
+        overlay.classList.remove('glitch');
+    }, 3000); // Duration of the glitch effect extended to 3 seconds
 }

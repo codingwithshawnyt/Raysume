@@ -1,14 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('enter-button').addEventListener('click', () => {
-        hideElements();
-        addGlitchEffect();
-        document.getElementById('enter-button').style.display = 'none'; // Hide the enter button
-        setTimeout(() => {
-            createAsciiSkull();
-        }, 3000); // Delay the creation of the ASCII skull by 3 seconds
-    });
-});
-
 function createAsciiSkull() {
     const asciiSkull = `
                       uuuuuuuuu
@@ -46,6 +35,11 @@ function createAsciiSkull() {
     asciiSkullElement.style.userSelect = 'none';
     console.log('ASCII Skull created');
     startCharacterCycle(asciiSkullElement, ['$', '@', '#', '%', '&', '*', '+', '=', '?', '!']);
+    
+    // Add the grow class after a short delay
+    setTimeout(() => {
+        asciiSkullElement.classList.add('grow');
+    }, 100); // Adjust the delay as needed
 }
 
 function startCharacterCycle(element, characters) {
@@ -94,3 +88,14 @@ function addGlitchEffect() {
         overlay.classList.remove('glitch');
     }, 3000); // Duration of the glitch effect extended to 3 seconds
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('enter-button').addEventListener('click', () => {
+        hideElements();
+        addGlitchEffect();
+        document.getElementById('enter-button').style.display = 'none'; // Hide the enter button
+        setTimeout(() => {
+            createAsciiSkull();
+        }, 3000); // Delay the creation of the ASCII skull by 3 seconds
+    });
+});

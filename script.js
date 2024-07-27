@@ -1,14 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('enter-button').addEventListener('click', () => {
-        hideElements();
-        addGlitchEffect();
-        document.getElementById('enter-button').style.display = 'none'; // Hide the enter button
-        setTimeout(() => {
-            createAsciiSkull();
-        }, 3000); // Delay the creation of the ASCII skull by 3 seconds
-    });
-});
-
 function createAsciiSkull() {
     const asciiSkull = `
                       uuuuuuuuu
@@ -45,6 +34,7 @@ function createAsciiSkull() {
     asciiSkullElement.style.color = 'red';
     asciiSkullElement.style.userSelect = 'none';
     console.log('ASCII Skull created');
+    console.log('Starting character cycle');
     startCharacterCycle(asciiSkullElement, ['$', '@', '#', '%', '&', '*', '+', '=', '?', '!']);
 }
 
@@ -64,6 +54,7 @@ function startCharacterCycle(element, characters) {
                     if (index === spans.length - 1) {
                         console.log('Character cycle complete');
                         showAccessGrantedMessage();
+                        setTimeout(clearScreen, 2000); // Clear screen after 2 seconds
                     }
                 }, 3000);
             }, randomDelay);
@@ -83,6 +74,8 @@ function hideElements() {
     document.getElementById('stars').style.display = 'none';
     document.getElementById('logo-wrapper').style.display = 'none';
     document.getElementById('stamp').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+    console.log('Elements hidden');
 }
 
 function addGlitchEffect() {
@@ -93,4 +86,30 @@ function addGlitchEffect() {
         overlay.style.opacity = 0;
         overlay.classList.remove('glitch');
     }, 3000); // Duration of the glitch effect extended to 3 seconds
+    console.log('Glitch effect added');
 }
+
+function clearScreen() {
+    const asciiSkullElement = document.getElementById('ascii-skull');
+    if (asciiSkullElement) {
+        asciiSkullElement.remove();
+    }
+    console.log('ASCII Skull removed');
+    removeAllElements();
+}
+
+function removeAllElements() {
+    document.body.innerHTML = '';
+    console.log('All elements removed from the body');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('enter-button').addEventListener('click', () => {
+        hideElements();
+        addGlitchEffect();
+        document.getElementById('enter-button').style.display = 'none'; // Hide the enter button
+        setTimeout(() => {
+            createAsciiSkull();
+        }, 3000); // Delay the creation of the ASCII skull by 3 seconds
+    });
+});

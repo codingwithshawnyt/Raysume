@@ -64,6 +64,9 @@ function startCharacterCycle(element, characters) {
                     if (index === spans.length - 1) {
                         console.log('Character cycle complete');
                         showAccessGrantedMessage();
+                        setTimeout(() => {
+                            createHighTechInterface();
+                        }, 3000); // Delay the creation of the high-tech interface by 3 seconds
                     }
                 }, 3000);
             }, randomDelay);
@@ -93,4 +96,55 @@ function addGlitchEffect() {
         overlay.style.opacity = 0;
         overlay.classList.remove('glitch');
     }, 3000); // Duration of the glitch effect extended to 3 seconds
+}
+
+function createHighTechInterface() {
+    clearScreen();
+
+    const container = document.createElement('div');
+    container.id = 'high-tech-container';
+
+    const centralFigure = document.createElement('div');
+    centralFigure.id = 'central-figure';
+    centralFigure.innerHTML = '<div class="bust"></div><div class="identify-text">[Identify Person]</div>';
+
+    const personalDataPanel = document.createElement('div');
+    personalDataPanel.id = 'personal-data-panel';
+    personalDataPanel.innerHTML = `
+        <h2>Personal Data</h2>
+        <ul>
+            <li>Name: </li>
+            <li>Home Address: </li>
+            <li>Business Address: </li>
+            <li>Identity Card No: </li>
+            <li>Passport No: </li>
+            <li>Driving License: </li>
+            <li>Income Tax No: </li>
+            <li>Car Registration: </li>
+            <li>Other: </li>
+        </ul>
+    `;
+
+    const confidentialDataPanel = document.createElement('div');
+    confidentialDataPanel.id = 'confidential-data-panel';
+    confidentialDataPanel.innerHTML = `
+        <h2>Confidential Data</h2>
+        <div class="fingerprint"></div>
+        <div class="padlock"></div>
+        <div class="folders">
+            <div class="folder"></div>
+            <div class="folder"></div>
+            <div class="folder"></div>
+            <div class="folder"></div>
+        </div>
+    `;
+
+    container.appendChild(centralFigure);
+    container.appendChild(personalDataPanel);
+    container.appendChild(confidentialDataPanel);
+    document.body.appendChild(container);
+}
+
+function clearScreen() {
+    document.body.innerHTML = '';
 }

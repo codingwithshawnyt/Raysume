@@ -1,0 +1,98 @@
+.loading-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: #00bfff;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+}
+.loading-text {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00bfff;
+    text-align: center;
+    animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
+}
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blinkTextCursor {
+    from { border-right-color: rgba(0, 191, 255, 0.75); }
+    to { border-right-color: transparent; }
+}
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    border: 2px solid #00bfff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #00bfff;
+}
+.progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #00bfff, #00ffbf);
+    animation: loading 3s linear forwards, glow 1.5s infinite alternate;
+}
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes glow {
+    from { box-shadow: 0 0 10px #00bfff; }
+    to { box-shadow: 0 0 20px #00ffbf; }
+}
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #00bfff;
+    border-radius: 50%;
+    animation: move 5s linear infinite;
+}
+@keyframes move {
+    from { transform: translateY(0) translateX(0); }
+    to { transform: translateY(-100vh) translateX(100vw); }
+}
+.dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 2px solid #00bfff;
+    box-shadow: 0 0 20px #00bfff;
+    animation: showDialog 1s ease-out forwards;
+    z-index: 4;
+}
+.dialog-content {
+    font-size: 24px;
+    color: #00ffbf;
+    text-align: center;
+    animation: textGlow 1.5s infinite alternate;
+}
+@keyframes showDialog {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+@keyframes textGlow {
+    from { text-shadow: 0 0 10px #00bfff; }
+    to { text-shadow: 0 0 20px #00ffbf; }
+}

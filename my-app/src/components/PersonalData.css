@@ -162,3 +162,18 @@
     box-shadow: 0 0 5px #00bfff;
     position: relative;
 }
+
+.loading-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row; /* Ensure the text elements are displayed in a row */
+}
+
+.loading-text {
+    font-size: 36px;
+    color: #00bfff;
+    text-align: center;
+    margin: 0 10px; /* Add some space between the words */
+}

@@ -5,17 +5,22 @@
     height: 100vh;
     width: 100vw;
     background-color: #000;
-    color: #00bfff;
+    color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    overflow: hidden;
   }
   
   .personal-data-container {
     display: flex;
     justify-content: space-between;
     width: 90%;
-    border: 2px solid #00bfff;
+    border: 2px solid #00ff00;
     padding: 20px;
-    box-shadow: 0 0 10px #00bfff;
+    box-shadow: 0 0 10px #00ff00;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
   }
   
   .left-panel, .right-panel {
@@ -26,6 +31,7 @@
   
   .center-panel {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex: 1;
@@ -33,10 +39,10 @@
   }
   
   .confidential-data, .fingerprint, .profile-picture, .ascii-person {
-    border: 2px solid #00bfff;
+    border: 2px solid #00ff00;
     padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 5px #00bfff;
+    box-shadow: 0 0 5px #00ff00;
   }
   
   .confidential-data h2, .right-panel h2 {
@@ -52,8 +58,8 @@
   .folder {
     width: 30px;
     height: 30px;
-    background-color: #00bfff;
-    box-shadow: 0 0 5px #00bfff;
+    background-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
   }
   
   .fingerprint {
@@ -69,8 +75,87 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px; /* Add margin to create space below the picture */
+    border: 2px solid #00ff00;
+    padding: 10px;
+    box-shadow: 0 0 5px #00ff00;
   }
   
   .ascii-person {
     text-align: center;
+    margin-top: 20px; /* Add margin to create space above the ASCII person */
+    border: 2px solid #00ff00;
+    padding: 10px;
+    box-shadow: 0 0 5px #00ff00;
+  }  
+  .glowing-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+    pointer-events: none;
   }
+  
+  .world-map {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Media/world-map.png') no-repeat center;
+    background-size: cover;
+    opacity: 0.4; /* Adjust opacity for a subtle effect */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .radial-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      rgba(0, 255, 0, 0.1) 0deg,
+      transparent 15deg,
+      rgba(0, 255, 0, 0.1) 30deg,
+      transparent 45deg,
+      rgba(0, 255, 0, 0.1) 60deg,
+      transparent 75deg,
+      rgba(0, 255, 0, 0.1) 90deg,
+      transparent 105deg,
+      rgba(0, 255, 0, 0.1) 120deg,
+      transparent 135deg,
+      rgba(0, 255, 0, 0.1) 150deg,
+      transparent 165deg,
+      rgba(0, 255, 0, 0.1) 180deg,
+      transparent 195deg,
+      rgba(0, 255, 0, 0.1) 210deg,
+      transparent 225deg,
+      rgba(0, 255, 0, 0.1) 240deg,
+      transparent 255deg,
+      rgba(0, 255, 0, 0.1) 270deg,
+      transparent 285deg,
+      rgba(0, 255, 0, 0.1) 300deg,
+      transparent 315deg,
+      rgba(0, 255, 0, 0.1) 330deg,
+      transparent 345deg,
+      rgba(0, 255, 0, 0.1) 360deg
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.3; /* Adjust opacity for a subtle effect */
+  }
+  
+  .data-item {
+    border: 2px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  

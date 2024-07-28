@@ -5,7 +5,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #000;
-    color: #00ff00;
+    color: #00bfff;
     font-family: 'Courier New', Courier, monospace;
   }
   
@@ -13,9 +13,9 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
-    border: 2px solid #00ff00;
+    border: 2px solid #00bfff;
     padding: 20px;
-    box-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 10px #00bfff;
   }
   
   .left-panel, .right-panel {
@@ -33,10 +33,10 @@
   }
   
   .confidential-data, .fingerprint, .profile-picture, .ascii-person {
-    border: 2px solid #00ff00;
+    border: 2px solid #00bfff;
     padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 5px #00ff00;
+    box-shadow: 0 0 5px #00bfff;
   }
   
   .confidential-data h2, .right-panel h2 {
@@ -52,8 +52,8 @@
   .folder {
     width: 30px;
     height: 30px;
-    background-color: #00ff00;
-    box-shadow: 0 0 5px #00ff00;
+    background-color: #00bfff;
+    box-shadow: 0 0 5px #00bfff;
   }
   
   .fingerprint {
@@ -74,4 +74,3 @@
   .ascii-person {
     text-align: center;
   }
-  

@@ -1,0 +1,77 @@
+#personal-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .personal-data-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    border: 2px solid #00ff00;
+    padding: 20px;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .left-panel, .right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .center-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .confidential-data, .fingerprint, .profile-picture, .ascii-person {
+    border: 2px solid #00ff00;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+  .confidential-data h2, .right-panel h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .folders {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .folder {
+    width: 30px;
+    height: 30px;
+    background-color: #00ff00;
+    box-shadow: 0 0 5px #00ff00;
+  }
+  
+  .fingerprint {
+    width: 100px;
+    height: 100px;
+    background: url('fingerprint.png') no-repeat center;
+    background-size: contain;
+  }
+  
+  .profile-picture {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .ascii-person {
+    text-align: center;
+  }
+  

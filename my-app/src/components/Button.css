@@ -1,0 +1,33 @@
+#button-wrapper {
+    position: absolute;
+    top: 85%; /* Adjust this value to position the button correctly */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+  
+  #enter-button {
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: #fff;
+    background-color: #000;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+    box-shadow: 0 0 10px #fff;
+  }
+  
+  #enter-button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  #enter-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 20px #fff;
+  }
+  

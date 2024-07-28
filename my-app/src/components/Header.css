@@ -1,0 +1,41 @@
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    height: 100vh; /* Make sure the header takes up the full viewport height */
+  }
+  
+  #logo-wrapper {
+    background-color: #000;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #logo {
+    width: 100%;
+    max-width: 500px; /* Adjust max-width as needed */
+    display: block;
+    margin: auto;
+    opacity: 0.8;
+  }
+  
+  #stamp {
+    position: absolute;
+    top: 50%; /* Center the stamp vertically */
+    left: 50%; /* Center the stamp horizontally */
+    transform: translate(-50%, -50%); /* Move the stamp to the exact center */
+    width: 150%;
+    height: 150%;
+    background-image: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Media/confidential%20stamp.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 1;
+    filter: contrast(300%) brightness(200%);
+  }
+  

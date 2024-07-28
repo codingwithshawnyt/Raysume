@@ -1,0 +1,22 @@
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure this is below other elements like #overlay */
+  }
+  .star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 1s infinite alternate;
+  }
+  @keyframes twinkle {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

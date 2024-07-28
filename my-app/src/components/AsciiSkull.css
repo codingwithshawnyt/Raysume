@@ -1,0 +1,16 @@
+#ascii-skull {
+    position: absolute;
+    top: 80%;
+    left: 47%;
+    transform: translate(-50%, 15%);
+    white-space: pre;
+    color: inherit;
+    background: transparent;
+    padding: 20px;
+    font-size: 1.5em;
+    transform-origin: center center;
+    overflow: hidden;
+    z-index: 4; /* Ensure it appears above other content */
+    text-align: center; /* Center text horizontally */
+    line-height: 1.2; /* Adjust line height for better vertical alignment */
+}

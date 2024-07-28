@@ -19,8 +19,8 @@ function App() {
       setTimeout(() => {
         setShowAsciiSkull(false);
         setShowPersonalData(true);
-      }, 3000); // Adjust timing as needed for skull display
-    }, 2000); // 2 seconds for glitching effect
+      }, 6000); // 2 seconds for ASCII skull display
+    }, 3000); // 2 seconds for glitching effect
   };
 
   return (

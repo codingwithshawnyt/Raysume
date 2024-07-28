@@ -59,7 +59,7 @@
   .fingerprint {
     width: 100px;
     height: 100px;
-    background: url('fingerprint.png') no-repeat center;
+    background: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Media/fingerprint.png') no-repeat center;
     background-size: contain;
   }
   

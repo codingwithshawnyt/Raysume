@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './PersonalData.css';
 
 const PersonalData = () => {
+  useEffect(() => {
+    const adjustFontSize = () => {
+      const dataItems = document.querySelectorAll('.data-item');
+      dataItems.forEach(item => {
+        let fontSize = 18; // Initial font size
+        item.style.fontSize = `${fontSize}px`;
+        while (item.scrollWidth > item.clientWidth && fontSize > 10) {
+          fontSize -= 1;
+          item.style.fontSize = `${fontSize}px`;
+        }
+      });
+    };
+
+    adjustFontSize();
+    window.addEventListener('resize', adjustFontSize);
+
+    return () => {
+      window.removeEventListener('resize', adjustFontSize);
+    };
+  }, []);
+
   return (
     <div id="personal-data">
       <div className="glowing-background"></div>
@@ -27,15 +48,14 @@ const PersonalData = () => {
           <div className="ascii-person">[Identity Person]</div>
         </div>
         <div className="right-panel">
-          <div className="data-item">Name: John Doe</div>
-          <div className="data-item">Home Address: 123 Main St</div>
-          <div className="data-item">Business Address: 456 Business Rd</div>
-          <div className="data-item">Identity Card No: 123456789</div>
-          <div className="data-item">Passport No: X1234567</div>
-          <div className="data-item">Driving License: D1234567</div>
-          <div className="data-item">Income Tax No: IT123456</div>
-          <div className="data-item">Car Registration: CR123456</div>
-          <div className="data-item">Other: Additional Info</div>
+          <div className="data-item">Contact</div>
+          <div className="data-item">About Me</div>
+          <div className="data-item">Skills</div>
+          <div className="data-item">References</div>
+          <div className="data-item">Education</div>
+          <div className="data-item">Experience</div>
+          <div className="data-item">Awards and Honors</div>
+          <div className="data-item">Club Involvements/Volunteering</div>
         </div>
       </div>
     </div>

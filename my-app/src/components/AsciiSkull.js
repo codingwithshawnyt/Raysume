@@ -51,12 +51,14 @@ const AsciiSkull = () => {
         const randomDelay = Math.floor(Math.random() * 1000);
         setTimeout(() => {
           let interval = setInterval(() => {
-            span.textContent = characters[index % characters.length];
+            span.textContent = characters[Math.floor(Math.random() * characters.length)];
           }, 100);
+          setTimeout(() => {
+            element.style.color = 'green'; // Change color to green 1 second before stopping
+          }, 2500);
           setTimeout(() => {
             clearInterval(interval);
             span.textContent = 'SHAWNRAY'[index % 8];
-            element.style.color = 'green';
             if (index === spans.length - 1) {
               showAccessGrantedMessage();
             }
@@ -65,7 +67,7 @@ const AsciiSkull = () => {
       }
     });
   };
-
+  
   const showAccessGrantedMessage = () => {
     const message = document.createElement('div');
     message.id = 'access-granted';

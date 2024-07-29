@@ -14,18 +14,9 @@
 }
 .loading-text {
     font-size: 36px;
-    margin-bottom: 20px;
     color: #00bfff;
     text-align: center;
-    animation: typewriter 4s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal;
-}
-@keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-}
-@keyframes blinkTextCursor {
-    from { border-right-color: rgba(0, 191, 255, 0.75); }
-    to { border-right-color: transparent; }
+    margin-bottom: 20px; /* Add some space between the text and the progress bar */
 }
 .progress-bar {
     width: 80%;

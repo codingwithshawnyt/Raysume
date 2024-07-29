@@ -1,28 +1,52 @@
-/* Add your CSS styles for the ContactInfo component here */
-.contact-info {
+.contact-info, .hologram {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: rgba(0, 0, 0, 0.7); /* Translucent background */
+  border: 1px solid #fff; /* Thin white perimeter line */
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Holographic glow */
+  position: relative;
+  opacity: 0.9; /* Slightly translucent */
+}
+
+.contact-info::before, .contact-info::after, .hologram::before, .hologram::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 20px); /* Increase space */
+  height: calc(100% - 20px); /* Increase space */
+  border: 1px solid #fff; /* Thin white perimeter line */
+  pointer-events: none;
+}
+
+.contact-info::before, .hologram::before {
+  top: 10px; /* Increase space */
+  left: 10px; /* Increase space */
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.contact-info::after, .hologram::after {
+  bottom: 10px; /* Increase space */
+  right: 10px; /* Increase space */
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .contact-info h2 {
   margin-bottom: 10px;
   font-size: 1.5em;
-  color: #333;
+  color: #00bfff; /* Holographic text color */
 }
 
 .contact-info p {
   margin: 5px 0;
-  color: #666;
+  color: #00bfff; /* Holographic text color */
 }
 
 .contact-info a {
-  color: #007bff;
+  color: #00bfff; /* Holographic link color */
   text-decoration: none;
 }
 

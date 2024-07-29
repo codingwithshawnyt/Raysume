@@ -17,6 +17,8 @@
     color: #00bfff;
     text-align: center;
     margin-bottom: 20px; /* Add some space between the text and the progress bar */
+    z-index: 5; /* Ensure it is on top of the particles */
+    position: relative; /* Required for z-index to work */
 }
 .progress-bar {
     width: 80%;
@@ -25,6 +27,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 10px #00bfff;
+    z-index: 5; /* Ensure it is on top of the particles */
 }
 .progress {
     width: 0;

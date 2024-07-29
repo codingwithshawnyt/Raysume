@@ -58,6 +58,13 @@ const PersonalData = () => {
         </div>
         <div className="center-panel">
           <div className="profile-picture"></div>
+          <div className={`contact-dialog ${isHolographicVisible ? 'visible' : ''}`}>
+            <div className="corner top-left"></div>
+            <div className="corner top-right"></div>
+            <div className="corner bottom-left"></div>
+            <div className="corner bottom-right"></div>
+            Contact Information
+          </div>
           <div className="ascii-person">[Shawn RAY]</div>
         </div>
         <div className="right-panel">

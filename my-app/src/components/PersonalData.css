@@ -1,5 +1,5 @@
-/* Add this at the top of your CSS file to ensure the font is applied */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 #personal-data {
     display: flex;
     justify-content: center;
@@ -12,23 +12,26 @@
     position: relative;
     overflow: hidden;
 }
+
 .data-item {
     border: 2px solid #00bfff;
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 5px #00bfff;
     position: relative;
-    width: auto; /* Adjust width as needed */
-    text-align: center; /* Center text within the box */
-    font-family: 'Orbitron', sans-serif; /* Apply the Orbitron font */
-    font-size: 18px; /* Adjust font size as needed */
-    color: #00bfff; /* Ensure the text color matches the theme */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+    width: auto;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    color: #00bfff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .data-item:hover {
-    transform: scale(1.05); /* Slightly enlarge the box on hover */
-    box-shadow: 0 0 15px #00bfff; /* Intensify the box shadow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
 }
+
 .personal-data-container {
     display: flex;
     justify-content: space-between;
@@ -38,20 +41,23 @@
     box-shadow: 0 0 10px #00bfff;
     position: relative;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 0.7;
 }
+
 .left-panel {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .right-panel {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the items horizontally */
-    justify-content: center; /* Center the items vertically */
+    align-items: center;
+    justify-content: center;
 }
+
 .center-panel {
     display: flex;
     flex-direction: column;
@@ -60,6 +66,7 @@
     flex: 1;
     margin: 0 20px;
 }
+
 .confidential-data, .fingerprint, .profile-picture, .ascii-person {
     border: 2px solid #00bfff;
     padding: 10px;
@@ -67,44 +74,51 @@
     box-shadow: 0 0 5px #00bfff;
     position: relative;
 }
+
 .confidential-data h2, .right-panel h2 {
     margin: 0 0 10px 0;
 }
+
 .folders {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 .folder {
     width: 30px;
     height: 30px;
     background-color: #00bfff;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .fingerprint {
     width: 100px;
     height: 100px;
     background: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Media/fingerprint.png') no-repeat center;
     background-size: contain;
 }
+
 .profile-picture {
     width: 200px;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Add margin to create space below the picture */
+    margin-bottom: 20px;
     border: 2px solid #00bfff;
     padding: 10px;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .ascii-person {
     text-align: center;
-    margin-top: 20px; /* Add margin to create space above the ASCII person */
+    margin-top: 20px;
     border: 2px solid #00bfff;
     padding: 10px;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .glowing-background {
     position: absolute;
     top: 0;
@@ -115,6 +129,7 @@
     z-index: 1;
     pointer-events: none;
 }
+
 .world-map {
     position: absolute;
     top: 50%;
@@ -123,11 +138,12 @@
     height: 100%;
     background: url('https://raw.githubusercontent.com/codingwithshawnyt/Raysume/main/Media/world-map.png') no-repeat center;
     background-size: cover;
-    opacity: 0.4; /* Adjust opacity for a subtle effect */
+    opacity: 0.4;
     transform: translate(-50%, -50%);
     z-index: 1;
     pointer-events: none;
 }
+
 .radial-lines {
     position: absolute;
     top: 0;
@@ -164,48 +180,55 @@
     );
     z-index: 1;
     pointer-events: none;
-    opacity: 0.3; /* Adjust opacity for a subtle effect */
+    opacity: 0.3;
 }
+
 .data-item {
     border: 2px solid #00bfff;
     padding: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 5px #00bfff;
     position: relative;
-    width: 80%; /* Adjust width as needed */
-    text-align: center; /* Center text within the box */
-    cursor: pointer; /* Change cursor to pointer */
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
 }
+
 .loading-text-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: row; /* Ensure the text elements are displayed in a row */
+    flex-direction: row;
 }
+
 .loading-text {
     font-size: 36px;
     color: #00bfff;
     text-align: center;
-    margin: 0 10px; /* Add some space between the words */
+    margin: 0 10px;
 }
+
 .extra-folders {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px; /* Add margin to create space below the extra folders */
+    margin-bottom: 20px;
 }
+
 .extra-folders .folder {
     width: 50px;
     height: 30px;
     background-color: #00bfff;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .folder-box {
     position: relative;
     background-color: #00bfff;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .folder-box::before {
     content: '';
     position: absolute;
@@ -217,6 +240,7 @@
     border-radius: 2px 2px 0 0;
     box-shadow: 0 0 5px #00bfff;
 }
+
 .holographic-projection {
     position: fixed;
     top: 50%;
@@ -225,13 +249,93 @@
     width: 300px;
     height: 200px;
     background-color: rgba(0, 191, 255, 0.2);
-    border: 2px solid #00bfff;
     box-shadow: 0 0 15px #00bfff;
     padding: 20px;
     text-align: center;
     z-index: 3;
-    display: none; /* Initially hidden */
+    display: none;
 }
+
 .holographic-projection.visible {
     display: block;
+}
+
+.contact-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: rgba(0, 191, 255, 0.2);
+    box-shadow: 0 0 15px #00bfff;
+    padding: 20px;
+    text-align: center;
+    z-index: 3;
+    display: none;
+    outline: none;
+}
+.contact-dialog.visible {
+    display: block;
+}
+
+.contact-dialog::before,
+.contact-dialog::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #ffffff;
+}
+.contact-dialog::before {
+    top: -1.3cm; /* Adjusted from -8px to -1.3cm */
+    left: -1.3cm; /* Adjusted from -8px to -1.3cm */
+    width: calc(100% + 2.6cm); /* Adjusted from 16px to 2.6cm */
+    height: calc(100% + 2.6cm); /* Adjusted from 16px to 2.6cm */
+    border-width: 2px 2px 0 0;
+}
+.contact-dialog::after {
+    bottom: -1.3cm; /* Adjusted from -8px to -1.3cm */
+    right: -1.3cm; /* Adjusted from -8px to -1.3cm */
+    width: calc(100% + 2.6cm); /* Adjusted from 16px to 2.6cm */
+    height: calc(100% + 2.6cm); /* Adjusted from 16px to 2.6cm */
+    border-width: 0 0 2px 2px;
+}
+.contact-dialog::before,
+.contact-dialog::after {
+    border-radius: 4px;
+    box-shadow: 0 0 15px #ffffff;
+}
+/* L-shaped corners */
+.contact-dialog .corner {
+    position: absolute;
+    border: 12px solid #ffffff; /* Moderately increased thickness */
+    width: 20px; /* Doubled from 10px to 20px */
+    height: 20px; /* Doubled from 10px to 20px */
+}
+
+.contact-dialog .corner.top-left {
+    top: -1.4cm;
+    left: -1.4cm;
+    border-right: 6px solid transparent; /* Adjusted for increased thickness */
+    border-bottom: 6px solid transparent; /* Adjusted for increased thickness */
+}
+
+.contact-dialog .corner.top-right {
+    top: -1.4cm;
+    right: -1.4cm;
+    border-left: 6px solid transparent; /* Adjusted for increased thickness */
+    border-bottom: 6px solid transparent; /* Adjusted for increased thickness */
+}
+
+.contact-dialog .corner.bottom-left {
+    bottom: -1.4cm;
+    left: -1.4cm;
+    border-right: 6px solid transparent; /* Adjusted for increased thickness */
+    border-top: 6px solid transparent; /* Adjusted for increased thickness */
+}
+
+.contact-dialog .corner.bottom-right {
+    bottom: -1.4cm;
+    right: -1.4cm;
+    border-left: 6px solid transparent; /* Adjusted for increased thickness */
+    border-top: 6px solid transparent; /* Adjusted for increased thickness */
 }

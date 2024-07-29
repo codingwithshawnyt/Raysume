@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PersonalData.css';
 
 const PersonalData = () => {
+  const [isHolographicVisible, setHolographicVisible] = useState(false);
+
   useEffect(() => {
     const adjustFontSize = () => {
       const dataItems = document.querySelectorAll('.data-item');
@@ -23,6 +25,10 @@ const PersonalData = () => {
     };
   }, []);
 
+  const handleContactClick = () => {
+    setHolographicVisible(!isHolographicVisible);
+  };
+
   return (
     <div id="personal-data">
       <div className="glowing-background"></div>
@@ -41,14 +47,21 @@ const PersonalData = () => {
               <div className="folder"></div>
             </div>
           </div>
+          <div className="extra-folders-container">
+            <div className="extra-folders">
+              <div className="folder folder-box"></div>
+              <div className="folder folder-box"></div>
+              <div className="folder folder-box"></div>
+            </div>
+          </div>
           <div className="fingerprint"></div>
         </div>
         <div className="center-panel">
           <div className="profile-picture"></div>
-          <div className="ascii-person">[Identity Person]</div>
+          <div className="ascii-person">[Shawn RAY]</div>
         </div>
         <div className="right-panel">
-          <div className="data-item">Contact</div>
+          <div className="data-item" onClick={handleContactClick}>Contact</div>
           <div className="data-item">About Me</div>
           <div className="data-item">Skills</div>
           <div className="data-item">References</div>
@@ -58,6 +71,17 @@ const PersonalData = () => {
           <div className="data-item">Club Involvements/Volunteering</div>
         </div>
       </div>
+      {isHolographicVisible && (
+        <>
+          <div className="projector-light visible"></div>
+          <div className="projector-beam visible"></div>
+          <div className="holographic-projection visible">
+            <h2>Contact Information</h2>
+            <p>Email: example@example.com</p>
+            <p>Phone: (123) 456-7890</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import PersonalData from './PersonalData';
 import './LoadingScreen.css';
+import ErrorOverlay from './ErrorOverlay'; // Import the ErrorOverlay component
 
 const LoadingScreen = () => {
   const [isFrozen, setIsFrozen] = useState(false);
@@ -44,6 +45,7 @@ const LoadingScreen = () => {
                 height="110vh" // Overfill the height
                 style={{ position: 'absolute', top: '-5vh', left: '-5vw', objectFit: 'cover', zIndex: 1 }}
               />
+              <ErrorOverlay /> // Add the ErrorOverlay component as a direct child of the video container
             </div>
           ) : (
             <div className="loading-screen-content">

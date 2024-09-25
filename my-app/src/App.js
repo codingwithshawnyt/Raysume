@@ -17,10 +17,6 @@ function App() {
     setTimeout(() => {
       setShowAsciiSkull(false);
       setIsLoading(true); // Show loading screen
-      setTimeout(() => {
-        setIsLoading(false); // Hide loading screen
-        setShowPersonalData(true);
-      }, 3000); // 3 seconds for loading screen
     }, 6000); // 6 seconds for ASCII skull display
   };
 

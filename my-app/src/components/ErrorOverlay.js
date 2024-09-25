@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ErrorOverlay.css';
+import { PowerGlitch } from 'powerglitch'
 
 const ErrorOverlay = () => {
   const [visible, setVisible] = useState(false);
@@ -22,6 +23,51 @@ const ErrorOverlay = () => {
       setTimeout(() => {
         setAnimationClass('animate-out');
       }, 2000); // Hide after 2 seconds
+    }
+  }, [visible]);
+
+  useEffect(() => {
+    if (visible) {
+      const glitchElement = document.querySelector('.error-overlay');
+
+      try {
+        const { startGlitch, stopGlitch } = PowerGlitch.glitch(
+          glitchElement,
+          {
+            playMode: 'always',
+            timing: {
+              duration: 2000,
+              iterations: 10,
+            },
+            glitchTimeSpan: {
+              start: 0.2,
+              end: 0.8,
+            },
+            shake: {
+              velocity: 5,
+              amplitudeX: 0.2,
+              amplitudeY: 0.2,
+            },
+            slice: {
+              count: 3,
+              velocity: 5,
+              minHeight: 0.01,
+              maxHeight: 0.3,
+              hueRotate: true,
+            },
+          }
+        );
+
+        return () => {
+          try {
+            stopGlitch();
+          } catch (error) {
+            console.error('Error stopping glitch:', error);
+          }
+        };
+      } catch (error) {
+        console.error('Error starting glitch:', error);
+      }
     }
   }, [visible]);
 

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "powerglitch": "^2.3.4",
     "react-player": "^2.16.0",
     "styled-components": "^6.1.13"
   },

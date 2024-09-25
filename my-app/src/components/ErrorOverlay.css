@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+
 .error-overlay {
     position: absolute;
     top: 0;
@@ -79,6 +81,7 @@
   }
   
   .error-text {
+    font-family: 'Consolas', monospace;
     color: #ff0000;
     font-size: 2rem;
     font-weight: bold;

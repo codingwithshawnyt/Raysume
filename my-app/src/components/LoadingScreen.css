@@ -8,26 +8,79 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(to bottom, #000, #111);
   }
   
   .loading-screen-content {
     text-align: center;
+    color: #00bfff;
+    position: relative;
   }
   
   .loading-text {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 20px; /* roughly an inch on most screens */
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
   
   .progress-bar {
-    width: 80%;  /* Make the progress bar occupy 80% of the width of the screen */
-    height: 10px;
-    border: 1px solid #fff;
-    margin: 0 auto;  /* Center the progress bar */
+    /* overridden in JSX */
   }
   
   .progress {
+    /* overridden in JSX */
+  }
+  
+  .loading-subtext {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #666;
+  }
+  
+  .glowing-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-image: linear-gradient(to bottom, #00bfff, #000);
+    background-size: 10px 10px;
+    opacity: 0.1;
+    animation: pulse 2s infinite;
+  }
+  
+  .moving-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #00bfff, #000);
+    background-size: 10px 10px;
+    opacity: 0.1;
+    animation: move 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }

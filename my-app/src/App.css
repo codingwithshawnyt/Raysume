@@ -20,24 +20,6 @@ body, html {
   align-items: center;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  z-index: 2;
-  transition: opacity 1s ease-in-out, left 0.1s, top 0.1s;
-  opacity: 0;
-}
-
-#overlay.glitch {
-  opacity: 1;
-  background-color: rgba(0, 0, 0, 0.8);
-  animation: noise 0.2s infinite linear, scale 5s infinite linear;
-}
-
 #access-granted {
   position: absolute;
   top: 50%;
@@ -61,70 +43,5 @@ body, html {
   }
   to {
     opacity: 1;
-  }
-}
-
-.glitch {
-  background-color: #fff;
-  box-shadow: 0 0 1px #fff;
-}
-
-.glitch::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    red,
-    red 1px,
-    orange 1px,
-    orange 2px,
-    yellow 2px,
-    yellow 3px,
-    green 3px,
-    green 4px,
-    blue 4px,
-    blue 5px,
-    indigo 5px,
-    indigo 6px,
-    violet 6px,
-    violet 7px
-  );
-  opacity: 0.3;
-  animation: noise 0.2s infinite linear, scale 5s infinite linear;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-@keyframes noise {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 10000px 10000px;
-  }
-}
-
-@keyframes scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }

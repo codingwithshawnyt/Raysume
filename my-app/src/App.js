@@ -3,43 +3,38 @@ import './App.css';
 import Header from './components/Header';
 import Button from './components/Button';
 import Stars from './components/Stars';
-import AsciiSkull from './components/AsciiSkull';
 import PersonalData from './components/PersonalData';
-import LoadingScreen from './components/LoadingScreen'; // Import the new component
+import LoadingScreen from './components/LoadingScreen';
+import AsciiSkull from './components/AsciiSkull';
 
 function App() {
-  const [isGlitching, setIsGlitching] = useState(false);
-  const [showAsciiSkull, setShowAsciiSkull] = useState(false);
   const [showPersonalData, setShowPersonalData] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // New state for loading screen
+  const [showAsciiSkull, setShowAsciiSkull] = useState(false); // New state for ASCII skull display
 
   const handleEnterClick = () => {
-    setIsGlitching(true);
+    setShowAsciiSkull(true);
     setTimeout(() => {
-      setIsGlitching(false);
-      setShowAsciiSkull(true);
+      setShowAsciiSkull(false);
+      setIsLoading(true); // Show loading screen
       setTimeout(() => {
-        setShowAsciiSkull(false);
-        setIsLoading(true); // Show loading screen
-        setTimeout(() => {
-          setIsLoading(false); // Hide loading screen
-          setShowPersonalData(true);
-        }, 3000); // 3 seconds for loading screen
-      }, 6000); // 6 seconds for ASCII skull display
-    }, 3000); // 3 seconds for glitching effect
+        setIsLoading(false); // Hide loading screen
+        setShowPersonalData(true);
+      }, 3000); // 3 seconds for loading screen
+    }, 6000); // 6 seconds for ASCII skull display
   };
 
   return (
-    <div className={`App ${isGlitching ? 'glitch' : ''}`}>
-      <div id="overlay" className={isGlitching ? 'glitch' : ''}></div>
-      {!isGlitching && !showAsciiSkull && !showPersonalData && !isLoading && <Header />}
-      {!isGlitching && !showAsciiSkull && !showPersonalData && !isLoading && (
+    <div className="App">
+      <div id="overlay"></div>
+      {!showPersonalData && !isLoading && !showAsciiSkull && <Header />}
+      {!showPersonalData && !isLoading && !showAsciiSkull && (
         <div id="button-wrapper">
           <Button onClick={handleEnterClick} />
         </div>
       )}
-      <Stars show={!isGlitching && !showAsciiSkull && !showPersonalData && !isLoading} />
-      {showAsciiSkull && <AsciiSkull />}
+      <Stars show={!showPersonalData && !isLoading && !showAsciiSkull} />
+      {showAsciiSkull && <AsciiSkull />} {/* Render ASCII skull */}
       {isLoading && <LoadingScreen />} {/* Render loading screen */}
       {showPersonalData && <PersonalData />}
     </div>

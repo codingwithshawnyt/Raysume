@@ -1,92 +1,33 @@
 .loading-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(135deg, #000428, #004e92);
-    color: #00bfff;
-    font-family: 'Courier New', Courier, monospace;
-    position: relative;
-    z-index: 3;
-    overflow: hidden;
-}
-.loading-text {
-    font-size: 36px;
-    color: #00bfff;
-    text-align: center;
-    margin-bottom: 20px; /* Add some space between the text and the progress bar */
-    z-index: 5; /* Ensure it is on top of the particles */
-    position: relative; /* Required for z-index to work */
-}
-.progress-bar {
-    width: 80%;
-    height: 20px;
-    border: 2px solid #00bfff;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 10px #00bfff;
-    z-index: 5; /* Ensure it is on top of the particles */
-}
-.progress {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #00bfff, #00ffbf);
-    animation: loading 3s linear forwards, glow 1.5s infinite alternate;
-}
-@keyframes loading {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
-@keyframes glow {
-    from { box-shadow: 0 0 10px #00bfff; }
-    to { box-shadow: 0 0 20px #00ffbf; }
-}
-.particles {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-.particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: #00bfff;
-    border-radius: 50%;
-    animation: move 5s linear infinite;
-}
-@keyframes move {
-    from { transform: translateY(0) translateX(0); }
-    to { transform: translateY(-100vh) translateX(100vw); }
-}
-.dialog {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border: 2px solid #00bfff;
-    box-shadow: 0 0 20px #00bfff;
-    animation: showDialog 1s ease-out forwards;
-    z-index: 4;
-}
-.dialog-content {
-    font-size: 24px;
-    color: #00ffbf;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loading-screen-content {
     text-align: center;
-    animation: textGlow 1.5s infinite alternate;
-}
-@keyframes showDialog {
-    from { opacity: 0; transform: translate(-50%, -60%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
-}
-@keyframes textGlow {
-    from { text-shadow: 0 0 10px #00bfff; }
-    to { text-shadow: 0 0 20px #00ffbf; }
-}
+  }
+  
+  .loading-text {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px; /* roughly an inch on most screens */
+  }
+  
+  .progress-bar {
+    width: 80%;  /* Make the progress bar occupy 80% of the width of the screen */
+    height: 10px;
+    border: 1px solid #fff;
+    margin: 0 auto;  /* Center the progress bar */
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #fff;
+  }

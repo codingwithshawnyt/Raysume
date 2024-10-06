@@ -5,33 +5,26 @@ import Button from './components/Button';
 import Stars from './components/Stars';
 import PersonalData from './components/PersonalData';
 import LoadingScreen from './components/LoadingScreen';
-import AsciiSkull from './components/AsciiSkull';
 
 function App() {
   const [showPersonalData, setShowPersonalData] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // New state for loading screen
-  const [showAsciiSkull, setShowAsciiSkull] = useState(false); // New state for ASCII skull display
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleEnterClick = () => {
-    setShowAsciiSkull(true);
-    setTimeout(() => {
-      setShowAsciiSkull(false);
-      setIsLoading(true); // Show loading screen
-    }, 6000); // 6 seconds for ASCII skull display
+    setIsLoading(true);
   };
 
   return (
     <div className="App">
       <div id="overlay"></div>
-      {!showPersonalData && !isLoading && !showAsciiSkull && <Header />}
-      {!showPersonalData && !isLoading && !showAsciiSkull && (
+      {!showPersonalData && !isLoading && <Header />}
+      {!showPersonalData && !isLoading && (
         <div id="button-wrapper">
           <Button onClick={handleEnterClick} />
         </div>
       )}
-      <Stars show={!showPersonalData && !isLoading && !showAsciiSkull} />
-      {showAsciiSkull && <AsciiSkull />} {/* Render ASCII skull */}
-      {isLoading && <LoadingScreen />} {/* Render loading screen */}
+      <Stars show={!showPersonalData && !isLoading} />
+      {isLoading && <LoadingScreen />}
       {showPersonalData && <PersonalData />}
     </div>
   );

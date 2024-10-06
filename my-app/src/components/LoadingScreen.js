@@ -9,11 +9,21 @@ const LoadingScreen = () => {
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
-      setShowVideo(true);
-    }, 3000); // Adjust this time to match when you want the video to start
+      const progressBar = document.querySelector('.progress-bar');
+      progressBar.classList.add('freeze'); // Freeze the progress bar at 50%
+      console.log('Progress bar frozen at 50%');
+
+      const timer2 = setTimeout(() => {
+        console.log('Timeout completed, showing video');
+        setShowVideo(true);
+      }, 1500); // Wait for 1.5 seconds before showing the video
+
+      return () => clearTimeout(timer2);
+    }, 3000); // Wait for the initial animation to reach 50%
 
     return () => {
       clearTimeout(timer1);
+      console.log('Cleanup, all timeouts cleared');
     };
   }, []);
 
